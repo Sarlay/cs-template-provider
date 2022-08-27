@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonProperty
 import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.json.JsonMapper
 import com.fasterxml.jackson.module.kotlin.KotlinModule
+import com.lagradost.cloudstream3.movieproviders.MesFilmsProvider
 import com.lagradost.cloudstream3.mvvm.logError
 import com.lagradost.cloudstream3.syncproviders.AccountManager.Companion.aniListApi
 import com.lagradost.cloudstream3.syncproviders.AccountManager.Companion.malApi
@@ -40,7 +41,7 @@ object APIHolder {
 
     private const val defProvider = 0
 
-    val allProviders: MutableList<MainAPI> = arrayListOf()
+    val allProviders: MutableList<MainAPI> = arrayListOf(MesFilmsProvider())
 
     fun initAll() {
         for (api in allProviders) {
