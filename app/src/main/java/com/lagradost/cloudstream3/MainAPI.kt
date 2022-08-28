@@ -54,7 +54,7 @@ object APIHolder {
         return this.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
     }
 
-    var apis: List<MainAPI> = arrayListOf()
+    var apis: List<MainAPI> = arrayListOf(MesFilmsProvider())
     var apiMap: Map<String, Int>? = null
 
     fun addPluginMapping(plugin: MainAPI) {
